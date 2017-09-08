@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Afrika</title>
+    <style>
+
+        @keyframes SlideIt {
+            0% {
+                background-image: url(Bilde1.jpg);
+            }
+            30% {
+                background-image: url(Bilde1.jpg);
+            }
+            35% {
+                background-image: url(Bilde2.jpg);
+            }
+            60% {
+                background-image: url(Bilde2.jpg);
+            }
+            65% {
+                background-image: url(Bilde3.jpg);
+            }
+            95% {
+                background-image: url(Bilde3.jpg);
+            }
+            100% {
+                background-image: url(Bilde1.jpg);
+            }
+        }
+        
+        body {
+            min-height: 100vh;
+            background-image: url("Bilde1.jpg");
+            background-size: cover;
+            background-position: center center;
+            animation: SlideIt 8s infinite;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        section {
+
+            color: snow;
+            text-shadow: 2px 2px 0px black;
+            text-transform: uppercase;
+            font-family: "Chaparral Pro";
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            font-size: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1>ATR</h1>
+        <p>The Safari Expert</p>
+    </section>
+
+</body>
+</html>
