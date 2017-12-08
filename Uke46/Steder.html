@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <style>
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: 5px;
+            max-width: 700px;
+            margin: 100px auto;
+        }
+        main > article {
+            text-align: center;
+            font-family: Sans-Serif;
+            
+            border-bottom: 5px solid darkorange;
+             background-color: orange;
+
+        }
+        img {
+            width: 100%;
+        }
+        
+        .light {
+            background-color: aliceblue;
+        }
+
+
+        .col-1 { grid-column: span 1;}
+        .col-2 { grid-column: span 2;}
+        .col-3 { grid-column: span 3;}
+        .col-4 { grid-column: span 4;}
+        .col-5 { grid-column: span 5;}
+        .col-6 { grid-column: span 6;}
+        .col-7 { grid-column: span 7;}
+        .col-8 { grid-column: span 8;}
+        .col-9 { grid-column: span 9;}
+        .col-10 { grid-column: span 10;}
+        .col-11 { grid-column: span 11;}
+        .col-12 { grid-column: span 12;}
+
+        .row-1 { grid-row: span 1;}
+        .row-2 { grid-row: span 2;}
+        .row-3 { grid-row: span 3;}
+        .row-4 { grid-row: span 4;}
+        .row-5 { grid-row: span 5;}
+        .row-6 { grid-row: span 6;}
+        .row-7 { grid-row: span 7;}
+        .row-8 { grid-row: span 8;}
+        .row-9 { grid-row: span 9;}
+        .row-10 { grid-row: span 10;}
+        .row-11 { grid-row: span 11;}
+        .row-12 { grid-row: span 12;}
+
+        h1 {
+            
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <main>
+        <article class="col-12">
+            <img src="Fir.jpg" alt="">
+            <h1>Firenze</h1>
+        </article>
+        <article class="row-2 col-6">
+            <img src="Skjev.jpeg" alt="">
+            <h1>Pisa</h1>
+        </article>
+        <article class="col-6">
+            <img src="Roma.jpg" alt="">
+            <h1>Roma</h1>
+        </article>
+        <article class="col-6">
+            <img src="Orvi.jpg" alt="">
+            <h1>Orvietto</h1>
+        </article>
+     
+    </main>
+
+</body>
+</html>

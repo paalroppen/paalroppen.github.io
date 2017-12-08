@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <style>
+        body {
+            background-color: black;
+            padding: 40px;
+        }
+
+        .filmer {
+            display: flex;
+            margin-top: 100px;
+        }
+        .filmer > article {
+            border: 2px solid white;
+            height: 200px;
+            flex: 1;
+            transition: 0.4s;
+            background-size: cover;
+            background-position: center center;
+            opacity: 0.4;
+        }
+        .filmer > article:hover {
+            flex: 2;
+            transform: scale(1.2);
+            opacity: 1;
+            z-index: 1000;
+        }
+
+        .filmer > article:nth-child(1) { background-image: url("Poster1.jpeg") }
+        .filmer > article:nth-child(2) { background-image: url("Poster2.jpeg") }
+        .filmer > article:nth-child(3) { background-image: url("Poster3.jpeg") }
+        .filmer > article:nth-child(4) { background-image: url("Poster4.jpg") }
+        .filmer > article:nth-child(5) { background-image: url("Poster5.jpeg") }
+    </style>
+</head>
+<body>
+
+    <section class="filmer">
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+    </section>
+
+</body>
+</html>
