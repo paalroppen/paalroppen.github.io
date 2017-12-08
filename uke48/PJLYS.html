@@ -18,9 +18,11 @@
 
         body {
             margin: 0;
+           /*
             min-height: 100vh;
             display: grid;
             grid-template-rows:auto 1fr auto;
+            */
         }
         body > nav {
             display: grid;
@@ -28,6 +30,7 @@
             text-align: center;
             background-color: #2d3d48;
         }
+
         body > nav > a {
             text-align: center;
             padding: 15px;
@@ -35,9 +38,17 @@
             color: white;
             font-family: Sans-Serif;
             font-size: 40px;
+            border-top: 2px solid gainsboro;
+            border-bottom: 2px solid gainsboro;
         }
         nav > a:hover {
             background-color: #D60000;
+        }
+
+        @media (max-width: 640px) {
+            body > nav {
+                grid-auto-flow: row;
+            }
         }
 
     </style>
@@ -55,6 +66,17 @@
     <a href="#">OM OSS</a>
 </nav>
 
+<main>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque error facilis libero similique sit. Commodi cumque deleniti, fugiat modi non obcaecati quaerat quasi, sapiente sequi sit suscipit ullam ut? Facere.</p>
+</main>
 
 
 </body>
