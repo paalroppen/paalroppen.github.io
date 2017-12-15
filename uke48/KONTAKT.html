@@ -47,11 +47,7 @@
             transition: 0.5s;
         }
 
-        @media (max-width: 640px) {
-            body > nav {
-                grid-auto-flow: row;
-            }
-        }
+
         main {
             background-color: lightslategrey;
         }
@@ -74,15 +70,27 @@
             color: gainsboro;
 
         }
+
         main {
             display: grid;
-            grid-auto-flow: column;
             grid-gap: 20px;
             padding:20px;
             text-align: center;
             color: white;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             min-height: 300px;
+        }
+
+        @media (max-width: 640px) {
+            body > nav {
+                grid-auto-flow: row;
+            }
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+        main > div:first-child >img {
+            width: 75%;
         }
 
     </style>
@@ -102,14 +110,29 @@
 
 <main>
     <div>
-
+    Vi håper at du liker det du ser. Dersom du ønsker å leie eller få mer informasjon kan du kontakte oss på flere måter.
+        <br>
+        <br>
+        <img src="kunde.jpg" alt="">
     </div>
     <div>
-
+        <img src="maile-01.png" alt="">
+        <br>
+        Epost: kontakt.pjlys@gmail.com
+        <br>
+        <br>
+        <a href="https://www.facebook.com/PJ-LYS-2215979488628703/?ref=br_rs"> <img src="fbfb-01.png" alt=""></a>
+        <br>
+        Du kan kontakte oss på Facebook ved å klikke på ikonet
+        <br>
+        <br>
+        
+        <img src="tlf.png" alt="">
+        <br>
+        Tlf: 467 85 084
+        
     </div>
-    <div>
 
-    </div>
 </main>
 <footer>
     © Snoppen Design 2017
