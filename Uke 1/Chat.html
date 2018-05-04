@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="minMelding">
+<div id="allemeldinger"></div>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyASdM1DZnbKN3uqAzO1kJsjJ4O958qu8Xk",
+        authDomain: "paul-40565.firebaseapp.com",
+        databaseURL: "https://paul-40565.firebaseio.com",
+        projectId: "paul-40565",
+        storageBucket: "paul-40565.appspot.com",
+        messagingSenderId: "154155057700"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script>
+    let db = firebase.database();
+    let meldinger = db.ref("meldinger");
+
+    let minMelding = document.getElementById("minMelding");
+    let alleMeldinger = document.getElementById("alleMeldinger");
+
+    function lagreMelding() {
+        meldinger.push(minMelding.value);
+        minMelding.value = "";
+    }
+
+    function visMelding(snap) {
+        alleMeldinger.innerHTML += "<p>" +snapval() + "</p>";
+    }
+
+    minMelding.onchange = lagremelding;
+    meldinger.on("child-added", visMelding);
+</script>
+</body>
+</html>

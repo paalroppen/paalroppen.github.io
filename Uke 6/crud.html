@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBnD-W16kgMHh5IrfL-Ww8iYw2HTLx9Izg",
+        authDomain: "skrt-33da0.firebaseapp.com",
+        databaseURL: "https://skrt-33da0.firebaseio.com",
+        projectId: "skrt-33da0",
+        storageBucket: "",
+        messagingSenderId: "916632893584"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script>
+
+
+    const db = firebase.database();
+    const personer = db.ref("bilregister/personer");
+    const biler = db.ref("bilregister/biler");
+
+    // CREATE
+    // Personnummer blir nå primærnøkkel til Petter Solberg
+    const petter = personer.child("1502200169999");
+    petter.set({
+        fornavn: "Petter",
+        etternavn : "Solberg"
+    })
+
+    // Hvis vi bruker push, lager Firebase en primærnøkkel
+    personer.push({
+        fornavn : "Martin",
+        etternavn : "Schanche"
+    })
+
+    // UPDATE
+    // Skal endre petter til Henning
+    petter.set({
+        fornavn: "Henning"
+    })
+
+    // DELETE heter REMOVE i firebase
+    petter.remove();
+
+    // SETTER regnr som pk
+    const volvo = bilder.child("ZZ13254");
+    volvo.set({
+        merke: "Volvo",
+        modell: "V40",
+        eier: "1502200169999"
+    });
+
+    const honda = bilder.child("FS12345");
+    honda.set({
+        merke: "Honda",
+        modell: "Jazz",
+        eier: "1502200169999"
+
+    })
+</script>
+
+</body>
+</html>

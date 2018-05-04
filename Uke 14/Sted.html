@@ -14,20 +14,23 @@
         header {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
-            border-bottom: 10px solid red;
             font-family: "Chaparral Pro";
         }
 
         .sok {
             padding-top: 50px;
             font-size: 60px;
-            color: #D60000;
+            color: grey;
 
         }
 
         input[type=text] {
-           color: grey;
-           width: 650px;
+            text-decoration-color: black;
+            width: 650px;
+            border-color: grey;
+            border-radius: 80px;
+            text-align: center;
+            outline: none;
          
         }
         .sook {
@@ -61,6 +64,9 @@
             min-height: 100vh;
             display: grid;
             grid-auto-rows: auto 1fr auto;
+            padding-right: 6%;
+            padding-left: 6%;
+            padding-top: 2%;
             
         }
 
@@ -83,13 +89,14 @@
             border: 2px solid grey;
             display: grid;
             grid-template-columns: 2fr 1fr;
+            font-family: "Chaparral Pro";
 
 
         }
 
         footer {
             text-align: center;
-            border-top: 10px solid red;
+
             padding-top: 20px;
             color: grey;
             font-family: "Chaparral Pro";
@@ -108,6 +115,7 @@
             background-color: white;
             padding: 10px;
             border-bottom: 2px solid #cacaca;
+        }
 
 
     </style>
@@ -122,7 +130,7 @@
             </p1>
         </div>
         <div class="sok">
-            <img src="Redsearch.png" alt="" width="">  <input type="text" width="300px" class="sook" id="inpTekst" autocomplete="off" autofocus placeholder="Søk etter sted, by eller land..">
+            <input type="text" width="300px" class="sook" id="inpTekst" autocomplete="off"  placeholder="Søk etter sted, by eller land..">
             <br>
             <nav>
                 <a href="LastOpp.html">Last opp egen erfaring</a>
@@ -163,16 +171,18 @@
 
         inpTekst.onblur = () => {
             inpTekst.value = "";
+            inpTekst.placeholder = "Søk etter sted, by eller land.."
         }
 
 
-    </script>
+        inpTekst.onfocus = () => {
+            inpTekst.placeholder = "";
+        }
 
-    <script>
         const alleSteder = document.getElementById("alleSteder");
 
         const db = firebase.database();
-        const steder = db.ref("results");
+        const steder = db.ref("anmeldelser");
 
         function visSted(stedSnap) {
             var key = stedSnap.key;
@@ -181,16 +191,16 @@
             var artikkel =`
                 <article>
                     <div>
-                        <h1>${sted.by}</h1>
+                        <h1>${sted.sted}</h1>
                         <br>
-                        <p1>By:</p1>
+                        <p1>By: ${sted.by}</p1>
                         <br>
-                        <p1>Land:</p1>
+                        <p1>Land: ${sted.land}</p1>
                         <br>
-                        <p1>Beskrivelse:</p1>
+                        <p1>Beskrivelse: ${sted.beskrivelse}</p1>
                     </div>
                     <div>
-                        <img src="Marbella.jpg" alt="">
+                        <img src="${sted.bildeurl}" alt="">
                     </div>
                 </article>
                      `;
@@ -198,7 +208,19 @@
 
         }
 
-        steder.on("child_added", visSted);
+        steder
+            .on("child_added", visSted);
+
+        inpTekst.oninput = function() {
+            alleSteder.innerHTML = "";
+            let sted = (inpTekst.value).toUpperCase();
+            steder
+                .orderByChild("stedStoreBokstaver")
+                .startAt(sted)
+                .endAt(sted + "\uf8ff")
+                .on("child_added", visSted)
+
+        }
 
     </script>
 

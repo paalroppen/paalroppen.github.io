@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <style>
+        body {
+            background-color: #eee;
+            font-family: Sans-Serif;
+        }
+
+        main {
+            max-width: 970px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .meta {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: blueviolet;
+            color: white;
+            padding: 8px;
+        }
+
+        section {
+            display: grid;
+            grid-gap: 30px;
+        }
+        #alleFilmene > article {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 15px;
+            background-color: white;
+            padding: 10px;
+            border-bottom: 2px solid #cacaca;
+        }
+
+        #alleFilmene img {
+            width: 95px;
+        }
+
+        .filmer
+        .orderByChild("Title")
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <section id="alleFilmene">
+
+        </section>
+    </main>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBnD-W16kgMHh5IrfL-Ww8iYw2HTLx9Izg",
+            authDomain: "skrt-33da0.firebaseapp.com",
+            databaseURL: "https://skrt-33da0.firebaseio.com",
+            projectId: "skrt-33da0",
+            storageBucket: "skrt-33da0.appspot.com",
+            messagingSenderId: "916632893584"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script>
+        const alleFilmene = document.getElementById("alleFilmene");
+
+        const db = firebase.database();
+        const filmer = db.ref("imdb/filmer");
+
+        function visFilm(filmSnap) {
+            var key = filmSnap.key;
+            var film = filmSnap.val();
+
+            var artikkel =`
+                <article>
+                <div class="meta">${film.Metascore}</div>
+                    <img src="${film.Poster}">
+                    <div>
+                    <h1>${film.Title}</h1>
+                    <p>${film.Actors}</p>
+                    <p>${film.Genre}</p>
+                    <p>${film.Plot}</p>
+                    </div>
+                    </article>
+                     `;
+            alleFilmene.innerHTML += artikkel;
+
+                     }
+
+        filmer.on("child_added", visFilm);
+
+    </script>
+</body>
+</html>

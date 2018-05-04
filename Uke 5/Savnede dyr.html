@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Savnede dyr</title>
+
+    <style>
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            min-height: 650px;
+
+        }
+
+        body {
+            background-color: darkgrey;
+            margin: 0%;
+            color: black;
+        }
+        main > article {
+            background-color: white;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        article > img {
+            width: 100%;
+        }
+        @media (max-width: 1100px) {
+            main {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 700px) {
+            main {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        main > article:nth-child(2) a {
+            color: white;
+        }
+
+        footer {
+            border-top: 2px solid white;
+            text-align: center;
+            padding-top: 4px;
+            color: black;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Savnede dyr</h1>
+    <main id="main"></main>
+
+    <script>
+
+        const main = document.getElementById("main");
+
+        function lagHTML(json) {
+            const dyrene = json.results;
+            for(const dyr of dyrene) {
+                main.innerHTML +=`
+                   <article>
+                    <h1>${dyr.navn} er en ${dyr.type}</h1>
+                    <img src="${dyr.bilde}" alt="">
+                    <p>${dyr.beskrivelse}</p>
+                    <a href="tel:${dyr.telefon}">
+                       ${dyr.telefon} 
+                    </a>
+                    </article>
+                `;
+            }
+        }
+        
+
+        fetch('dyrene.json')
+            .then(response => {return response.json()})
+            .then( json => {lagHTML(json)})
+            .catch(error => {main.innerHTML = error})
+
+
+    </script>
+
+
+
+</body>
+
+<footer>© 2018 SVM SAVNEDE DYR</footer>
+</html>

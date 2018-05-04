@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fargekampen</title>
+    <style>
+        body {
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+
+
+<input type="text" id="velgFarge">
+
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fargekampen</title>
+    <style>
+        body {
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+
+
+<input type="text" id="velgFarge">
+
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBtJm3N_7LCixODYLMZRL9e2_1i97Ec3PY",
+        authDomain: "informasjonsteknologi-19837.firebaseapp.com",
+        databaseURL: "https://informasjonsteknologi-19837.firebaseio.com",
+        projectId: "informasjonsteknologi-19837",
+        storageBucket: "informasjonsteknologi-19837.appspot.com",
+        messagingSenderId: "635783316652"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script>
+
+    let db = firebase.database();
+    let farge = db.ref("farge");
+    let velgFarge = document.getElementById("velgFarge");
+
+    function settFarge() {
+        document.body.style.backgroundColor = velgFarge.value;
+
+    }
+
+    function byttFarge(snapshot) {
+        document.body.style.backgroundColor = snapshot.val();
+    }
+
+    velgFarge.onchange = settFarge;
+    // Når fargen endres i databasen
+    // Skal vi bytte farge på nettsiden
+    farge.on("value", byttFarge);
+
+
+</script>
+
+
+
+</body>
+</html>
+
+<script>
+
+    let db = firebase.database();
+    let farge = db.ref("farge");
+    let velgFarge = document.getElementById("velgFarge");
+
+    function settFarge() {
+        document.body.style.backgroundColor = velgFarge.value;
+
+    }
+
+    function byttFarge(snapshot) {
+        document.body.style.backgroundColor = snapshot.val();
+    }
+
+    velgFarge.onchange = settFarge;
+    // Når fargen endres i databasen
+    // Skal vi bytte farge på nettsiden
+    farge.on("value", byttFarge);
+
+
+</script>
+
+
+
+</body>
+</html>

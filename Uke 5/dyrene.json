@@ -1,0 +1,34 @@
+{
+  "results" : [
+    {
+      "navn" : "Klaus Knegg",
+      "type" : "Hest",
+      "bilde" : "hest.jpg",
+      "telefon" : "+4798989898",
+      "beskrivelse" : "Klaus rømte fra stallen på torsdag."
+    },
+    {
+      "navn" : "Rotte Pung",
+      "type" : "Rotte",
+      "bilde" : "pung.jpg",
+      "telefon" : "+4769696969",
+      "beskrivelse" : "Rotta Pung rømte fra hulen sin på mandag."
+    },
+    {
+      "navn" : "Wolfie",
+      "type" : "Ulv",
+      "bilde" : "wolfie.jpg",
+      "telefon" : "+4712341234",
+      "beskrivelse" : "Wolfie rømte tirsdag kveld og spiste et menneske på veien."
+    },
+    {                                                                               
+      "navn" : "Wolfie",                                                            
+      "type" : "Ulv",                                                               
+      "bilde" : "wolfie.jpg",
+      "telefon" : "+4712341234",                                                    
+      "beskrivelse" : "Wolfie rømte tirsdag kveld og spiste et menneske på veien."  
+    }                                                                               
+
+
+  ]
+}
