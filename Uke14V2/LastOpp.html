@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
-
+    <link scr(eller href) ="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/plugins/foundation.magellan.js" type=stylesheet>
     <style>
+
+
 
         * {
             margin: 0;
@@ -87,13 +89,32 @@
 
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 800px) {
             body {
-                grid-auto-flow: row;
+                padding: 10px;
             }
-
+            header {
+                width: 100%;
+            }
+            header > div > p {
+                margin-top: 20px;
+                font-size: 50px;
+            }
             main {
-                grid-template-columns: 1fr;
+                width: 100%;
+            }
+            textarea {
+                width: 100%;
+                min-height: 60px;
+            }
+            footer {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 565px) {
+            header > div > p {
+                font-size: 30px;
             }
         }
 

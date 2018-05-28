@@ -123,52 +123,54 @@
             border-bottom: 2px solid #cacaca;
         }
 
-        @media (max-width: 900px) {
+       @media (max-width: 900px) {
 
-            body {
-                padding: 0;
-                max-width: 100vw;
-            }
+                   body {
+                       padding: 0;
+                       max-width: 100vw;
+                   }
 
-            header {
-                grid-template-columns: 1fr;
-                max-width: 100vw;
-                margin: auto;
-            }
+                   header {
+                       grid-template-columns: 1fr;
+                       max-width: 100vw;
+                       margin: auto;
+                   }
 
-            header > div > p {
-                text-align: center;
-            }
+                   header > div {
+                       max-width: 100vw;
+                   }
 
-            header > div > p > img {
-                max-width: 50%;
-            }
+                   header > div > p {
+                       text-align: center;
+                   }
 
-            .sok {
-                font-size: 45px;
-                padding-top: 10px;
-            }
+                   header > div > p > img {
+                       max-width: 100%;
+                   }
 
-            .sook {
-                max-width: 100vw;
-            }
+                   .sok {
+                       font-size: 45px;
+                       padding-top: 10px;
+                       text-align: center;
+                   }
 
-            #alleSteder {
-                padding: 10px;
-                grid-template-columns: 1fr;
-                width: 100%;
-            }
+                   .sook {
+                       max-width: 90%;
+                   }
 
-        }
+                   #alleSteder {
+                       padding: 10px;
+                       grid-template-columns: 1fr;
+                       width: 100%;
+                   }
 
-        @media (max-width: 470px) {
-            .sok {
-                font-size: 30px;
-            }
-            #alleSteder > article {
-                grid-template-columns: 1fr;
-            }
-        }
+               }
+
+               @media (max-width: 470px) {
+                   .sok {
+                       font-size: 30px;
+                   }
+
 
 
     </style>
