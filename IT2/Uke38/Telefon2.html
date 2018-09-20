@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch-Oppgaver</title>
+</head>
+<body>
+
+<h1>Oppgaver uke 38 Switch</h1>
+
+<p>Skriv inn ditt mobilmerke</p>
+
+
+
+<div>
+
+    <span>Mobilmerke:</span>
+    <input type="text" id="inpNavn"> <button id="velgKnappen">Velg</button>
+</div>
+
+<div id="divResultat">
+
+</div>
+
+<script>
+
+    var inpNavn = document.getElementById("inpNavn");
+    var divResultat = document.getElementById("divResultat");
+    var velgKnappen = document.getElementById("velgKnappen");
+
+    velgKnappen.onclick = function () {
+
+        var mobil = inpNavn.value;
+
+        switch (mobil){
+            case "apple":
+            case "APPLE":
+                divResultat.innerHTML = ("Jasså, du har en iPhone");
+                document.body.style.backgroundColor = "blue";
+                break;
+            case "nokia":
+            case "NOKIA":
+                divResultat.innerHTML = ("Jasså, du har en Nokia mobil");
+                document.body.style.backgroundColor = "green";
+                break;
+            case "sony":
+            case "SONY":
+                divResultat.innerHTML = ("Jasså, du har en Sony mobil");
+                document.body.style.backgroundColor = "yellow";
+                break;
+            case "samsung":
+            case "SAMSUNG":
+                divResultat.innerHTML = ("Jasså, du har en Samsung mobil");
+                document.body.style.backgroundColor = "red";
+                break;
+            default:
+                divResultat.innerHTML = ("Du har en fucka mobil");
+                document.body.style.backgroundColor = "orange";
+
+        }
+    }
+
+</script>
+
+</body>
+</html>
