@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="knapp">Klikk her</button>
+<br>
+<button id="knapp2">Klikk her</button>
+<br>
+<button id="knapp3">Klikk her</button>
+
+<input id="inputFelt" type="text" placeholder="Skriv inn en ny film">
+
+
+<script>
+    var filmListe = ["Pulp Fiction", "The Darjeeling", "Fight Club"];
+
+    var knapp = document.getElementById("knapp");
+
+    var knapp2 = document.getElementById("knapp");
+
+    var inputFelt = document.getElementById("inputFelt");
+
+    var knapp3 = document.getElementById("knapp3");
+
+    knapp.onclick = function () {
+        document.write(filmListe);
+    };
+
+    knapp2.onclick = function () {
+        document.write(filmListe[2]);
+    };
+    knapp3.onclick = function (){
+        filmListe.push(inputFelt.value);
+        document.write(filmListe);
+
+    };
+
+    var megselv = {
+        navn: "Paal Roppen",
+        jobb: "Sjef",
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

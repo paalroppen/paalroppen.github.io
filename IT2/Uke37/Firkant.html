@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>firkant som følger musen</title>
+
+    <style>
+
+        body{
+           cursor: none;
+        }
+
+        #firkant {
+            background-color: #0d99a5;
+            height: 70px;
+            width: 70px;
+            margin-left: 40px;
+            margin-top: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<img src="Gudmayn.jpg" id="firkant"></img>
+
+<script>
+
+    var firkant = document.getElementById("firkant");
+
+    document.onmousemove = function () {
+        var x = event.clientX;
+        var y = event.clientY;
+        console.log("x= " + x);
+        console.log("y= " + y);
+
+        firkant.style.marginLeft = x + "px";
+        firkant.style.marginTop = y + "px";
+    }
+
+</script>
+</body>
+</html>
