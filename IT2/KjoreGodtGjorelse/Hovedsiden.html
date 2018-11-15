@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kjøregodtgjørelse</title>
+
+    <style>
+
+        main {
+            padding-left: 10%;
+            padding-right: 10%;
+            text-align: center;
+        }
+
+        header {
+            min-height: 50px;
+            background-color: #A5F2F2;
+            padding: 0;
+            text-align: ;
+
+        }
+
+        #Logo {
+            max-height: 50px;
+            padding: 2%;
+            display: block;
+            margin: auto;
+        }
+
+        *{
+            margin: 0;
+        }
+
+        main {
+            padding-top: 20px;
+            font-family: Futura;
+        }
+
+        #Grid1 {
+        display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #Div1{
+
+        }
+
+        ::placeholder {
+            color: black;
+            opacity: 1;
+        }
+
+        #strl > input{
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid #ddd;
+            line-height: 50px;
+            cursor: pointer
+        }
+
+        #bil:checked ~ label[for="bil"],
+        #motorsykkel:checked ~ label[for="motorsykkel"],
+        #elbil:checked ~ label[for="elbil"] {
+            background: #A5F2F2;
+            color: white;
+        }
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <img src="KGG.png" alt="" id="Logo">
+</header>
+
+<main>
+
+    <div id="Grid1">
+    <div id="Div1">
+        <h2>REGN UT DIN KJØREGODTGJØRELSE</h2>
+        <br>
+        VENNLIGST FYLL UT HVOR MANGE KILOMETER DU KJØRTE
+        <br>
+        <br>
+        <div id="strl">
+            <input type="radio" name="type" id="bil" />
+            <input type="radio" name="type" id="motorsykkel" />
+            <input type="radio" name="type" id="elbil" />
+
+            <label for="bil">BIL</label>
+            <label for="motorsykkel">MC</label>
+            <label for="elbil">EL-BIL</label>
+            </div>
+        <br>
+        <input type="number" id="antallKM" placeholder="ANTALL KILOMETER">
+        <button>REGN UT</button>
+        <div id="Resultat">
+
+        </div>
+    </div>
+    <div>
+        <h2>SLIK FUNKER KJØREGODTGJØRELSE.NO</h2>
+        <br>
+
+        <iframe width="430" height="242" src="https://www.youtube.com/embed/KyBYuEgvFl0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    </div>
+</main>
+
+<script>
+
+    var antallKm = document.getElementById(antallKm);
+    var type =
+    var antallKr =
+
+
+    function svar(antallKm,type){
+        var tekst = "Etter å ha kjørt " + antallKm + " i " + type + " har du krav på" + antallKr;
+                document.write(tekst);
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
