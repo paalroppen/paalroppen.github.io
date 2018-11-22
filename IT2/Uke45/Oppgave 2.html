@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nyttårstur</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+
+<main>
+
+    <div id="app">
+
+        <h2>Antall person på LAN</h2>
+        <div id="boks">
+            <h4>Antall i rommet:</h4>
+            <div id="divTeller">0</div>
+        </div>
+        <div id="skjema"></div>
+        <h5>Legg til</h5>
+        <button id="btnAdd">Legg til person</button>
+        <h5>Fjern</h5>
+        <button id="btnRemove">Fjern person</button>
+    </div>
+
+
+</main>
+
+<script>
+    const divTeller = document.getElementById("divTeller");
+    const btnAdd = document.getElementById("btnAdd");
+    const btnRemove = document.getElementById("btnRemove");
+
+    let antall = 0;
+
+    btnAdd.onclick = function () {
+        antall += 1;
+        divTeller.innerHTML = antall;
+        if (60>antall && antall>55){
+            alert("Du nærmer deg full kapasitet");
+        }
+        if (antall == 60){
+            alert("Nå kan ikke flere komme inn!");
+        }
+        if (antall > 60){
+            alert("Nå er det for mange personer inne!")
+            document.body.style.backgroundImage = "url('./Skra.gif')";
+        }
+    }
+
+    btnRemove.onclick = function () {
+        antall -= 1;
+        divTeller.innerHTML = antall;
+    }
+
+    window.onkeyup = function (event) {
+        if (event.code === "ArrowUp"){
+            console.log("Pil opp")
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

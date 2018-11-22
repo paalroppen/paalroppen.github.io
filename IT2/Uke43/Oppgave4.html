@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul id="filmListe">
+        <li>Bolgen</li>
+        <li>Harry Potter</li>
+    </ul>
+
+    <input id="inputListe" type="text">
+    <input id="inputBf" type="color">
+    <button id="btn"></button>
+
+</body>
+</html>
+
+<script>
+    const filmliste = document.getElementById("filmListe");
+    const inputFilm = document.getElementById("inputListe");
+    const inputBf = document.getElementById("inputBf");
+
+
+    const btn = document.getElementById("btn");
+
+   //filmListe.innerHTML += "<li>Diehard</li>";
+
+    btn.onclick = function () {
+        leggTilPunkt(filmliste,inputFilm.value,inputBf.value);
+        inputFilm.value = "";
+    }
+
+    function leggTilPunkt(liste,punkt,bakgrunnsFarge) {
+        liste.innerHTML += "<li>" + punkt + "</li>";
+        liste.style.backgroundColor = bakgrunnsFarge;
+    }
+
+    // leggTilPunkt(filmliste,"Diare Hard");
+    // leggTilPunkt(filmliste,"Diare Harder");
+
+
+</script>

@@ -16,7 +16,6 @@
             min-height: 50px;
             background-color: #A5F2F2;
             padding: 0;
-            text-align: ;
 
         }
 
@@ -71,6 +70,16 @@
             color: white;
         }
 
+        #Resultat{
+            font-style: italic;
+            margin-top: 2%;
+        }
+
+        #Video {
+            width: 33%;
+            height: 33%;
+        }
+
 
 
 
@@ -81,7 +90,7 @@
 <body>
 
 <header>
-    <img src="KGG.png" alt="" id="Logo">
+    <img src="KGGG.png" alt="" id="Logo">
 </header>
 
 <main>
@@ -104,7 +113,8 @@
             </div>
         <br>
         <input type="number" id="antallKM" placeholder="ANTALL KILOMETER">
-        <button>REGN UT</button>
+        <button onclick="svar()">REGN UT</button>
+        <br>
         <div id="Resultat">
 
         </div>
@@ -113,22 +123,46 @@
         <h2>SLIK FUNKER KJØREGODTGJØRELSE.NO</h2>
         <br>
 
-        <iframe width="430" height="242" src="https://www.youtube.com/embed/KyBYuEgvFl0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <video id="Video" controls src="Reklame.mp4"></video>
     </div>
     </div>
 </main>
 
 <script>
 
-    var antallKm = document.getElementById(antallKm);
-    var type =
-    var antallKr =
+    var antallKm = document.getElementById("antallKM");
+    var antallKr;
+    const bil = document.getElementById("bil");
+    const motorsykkel = document.getElementById("motorsykkel");
+    const elbil = document.getElementById("elbil");
+    const Resultat = document.getElementById("Resultat");
 
 
-    function svar(antallKm,type){
-        var tekst = "Etter å ha kjørt " + antallKm + " i " + type + " har du krav på" + antallKr;
-                document.write(tekst);
+
+
+
+    function svar(){
+        if (bil.checked) {
+            antallKr=antallKm.value*5;
+            var tekst = "Etter å ha kjørt " + antallKm.value + "km i " + "bil" + " har du krav på " + antallKr + "kr";
+            Resultat.innerHTML=tekst;
+        }
+        if (motorsykkel.checked) {
+            antallKr=antallKm.value*3;
+            var tekst = "Etter å ha kjørt " + antallKm.value + "km i " + "MC" + " har du krav på " + antallKr + "kr";
+            Resultat.innerHTML=tekst;
+        }
+        if (elbil.checked) {
+            antallKr=antallKm.value*7;
+            var tekst = "Etter å ha kjørt " + antallKm.value + "km i " + "el-bil" + " har du krav på " + antallKr + "kr";
+            Resultat.innerHTML=tekst;
+        }
+
     }
+
+
+
+    
 
 
 

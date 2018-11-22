@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="number" id="Bredde" placeholder="Bredde">
+<input type="number" id="Lengde" placeholder="Lengde">
+<button id="knapEn">Regne ut areal</button>
+
+
+<script>
+
+    var kBredde = document.getElementById("Bredde");
+    var kLengde = document.getElementById("Lengde");
+    var btn = document.getElementById("knapEn");
+
+    btn.onclick = function(){
+        document.write("Arealet ditt er " + kBredde.value * kLengde.value);
+    }
+
+</script>
+
+</body>
+</html>
