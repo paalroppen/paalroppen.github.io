@@ -76,8 +76,13 @@
         }
 
         #Video {
-            width: 33%;
-            height: 33%;
+            width: 73%;
+            height: 73%;
+        }
+
+        #andmeldOgTerning{
+            display: grid;                     
+                grid-template-columns: 1fr 1fr;
         }
 
 
@@ -123,22 +128,43 @@
         <h2>SLIK FUNKER KJØREGODTGJØRELSE.NO</h2>
         <br>
 
-        <video id="Video" controls src="Reklame.mp4"></video>
+        <video id="Video" controls>
+            <source src="Reklame.mp4" type="video/mp4">
+        </video>
     </div>
+    </div>
+    <br>
+    <div id="andmeldOgTerning">
+    <div>
+        <h2>Vil du lese en tilfeldig anmeldelse?</h2>
+        <button id="btnAM">Klikk her</button>
+        <br>
+        <p id="annMeld"></p>
+    </div>
+    <div>
+        <h2>Tidligere brukere sine terningkast</h2>
+        <p id="tern"></p>
+
+    </div>
+
     </div>
 </main>
 
 <script>
 
+
     var antallKm = document.getElementById("antallKM");
     var antallKr;
+    var pers = ["Pål", "Henrik", "Fortolf", "Thomas", "Randi"]
+    var personer = ["Simon Lexell", "Thor Christian", "Martin Svestad", "Liam Young", "Dan Bilzerian"];
+    var anmeldelser = ["denne siden er fantastisk!", "kjøregodtgjørelse har gjort livet mitt mye enklere!", "10/10", "denne siden er ikke så bra.", "helt ok hjelpemiddel."];
     const bil = document.getElementById("bil");
     const motorsykkel = document.getElementById("motorsykkel");
     const elbil = document.getElementById("elbil");
     const Resultat = document.getElementById("Resultat");
-
-
-
+    const btnAM = document.getElementById("btnAM");
+    const annMeld = document.getElementById("annMeld");
+    const tern = document.getElementById("tern");
 
 
     function svar(){
@@ -159,6 +185,32 @@
         }
 
     }
+
+    function anmeld(){
+        var tall1 = Math.random()*5;
+        var tall2 = Math.random()*5;
+        var pers = personer[Math.floor(tall1)];
+        var anmeld = anmeldelser[Math.floor(tall2)];
+        annMeld.innerHTML=pers + " mener følgende om siden: " + anmeld;
+
+    }
+
+    btnAM.onclick = anmeld;
+
+    for(var i=0;i<=4;i++){
+        let terning = Math.floor(Math.random()*6)+1;
+        tern.innerHTML+=(pers[i] + " gir terningkast " + Math.floor(terning))+ '<br>';
+
+    }
+
+    
+
+    
+    
+
+
+
+
 
 
 

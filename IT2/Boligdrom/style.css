@@ -1,0 +1,129 @@
+body{
+    background-color: white;
+    text-align: center;
+    font-family: Futura;
+
+   
+
+}
+
+*{
+            margin: 0;
+        }
+#bildeheader{
+    height: 40%;
+    width: 40%;
+}
+
+#tekstheader a {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+#tekstheader {
+    font-size: 100px;
+    text-align: left;
+    padding-top: 30px;
+}
+
+header {
+    background-color: #0d99a5;
+    border-bottom: 2px solid black;
+}
+
+#headerlogo {
+    display: grid;
+    grid-template-columns:1fr 2fr;
+}
+
+main {
+    padding: 20px;
+    min-height: 450px;
+}
+
+#navogintro {
+    display: grid;
+    grid-template-columns:3fr 1fr 3fr;
+    padding-bottom: 30px;
+}
+#navogintro ul {
+    list-style-type: none;
+}
+
+#barenav a {
+    text-align:center;
+    text-decoration: none;
+    color: #0d99a5;
+
+}
+
+#panorama {
+    max-width: 65%;
+}
+
+#boligbilder {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#boligbilder img {
+    max-width: 50%;
+}
+footer  {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 2px solid black;
+}
+
+#hustilsalgs {
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#takontakt {
+    padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
