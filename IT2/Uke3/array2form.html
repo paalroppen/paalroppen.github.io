@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="">Navn:</label>
+        <input type="text">
+        <label for="">Må huskes</label>
+        <input type="text">
+        <button id="knapp" type="submit">Send inn</button>
+    </form>
+
+    <ul id="huskeListe">
+
+    </ul>
+
+    <script>
+        let inputFelt = document.querySelectorAll("input");
+        let knapp = document.querySelector("#knapp");
+        let huskeliste = document.querySelector("#huskeListe");
+
+        let todos = [];
+
+
+
+        function leggtilTodo() {
+            for(let input of inputFelt){
+                todos.push(input.value);
+            }
+            huskeliste.innerHTML = todos;
+        }
+
+        knap.onclick = leggtilTodo();
+    </script>
+
+</body>
+</html>

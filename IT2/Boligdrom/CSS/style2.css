@@ -3,13 +3,13 @@ body{
     text-align: center;
     font-family: Futura;
 
-   
+
 
 }
 
 *{
-            margin: 0;
-        }
+    margin: 0;
+}
 #bildeheader{
     height: 40%;
     width: 40%;
@@ -42,13 +42,17 @@ main {
     min-height: 450px;
 }
 
-#navogintro {
+#bartilside {
     display: grid;
-    grid-template-columns:3fr 1fr 3fr;
-    padding-bottom: 30px;
+    grid-template-columns:1fr;
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+
 }
-#navogintro ul {
+#bartilside ul {
     list-style-type: none;
+
 }
 
 #barenav a {
@@ -58,18 +62,6 @@ main {
 
 }
 
-#panorama {
-    max-width: 65%;
-}
-
-#boligbilder {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-#boligbilder img {
-    max-width: 50%;
-}
 footer  {
     padding: 20px;
     display: grid;
@@ -85,43 +77,19 @@ footer  {
     grid-template-columns: 1fr;
 }
 
+main a {
+    text-decoration: none;
+    color: #0d99a5;
+
+}
+
+main img {
+    max-height: 150px;
+}
+
 #takontakt {
     padding-top: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

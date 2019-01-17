@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        body {
+            text-align: center;
+        }
+
+        #gridEn {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="gridEn">
+<div>
+<img id="imgGranbo" src="bilder/granbo.jpg" alt="">
+<p id="outputEn"></p>
+</div>
+<div>
+<img id="imgGranstua" src="bilder/granstua.jpg" alt="">
+<p id="outputTo"></p>
+</div>
+</div>
+<div id="gridTo">
+
+    <img id="output"src="" alt="">
+    <div> <!-- Lager et eget div-element til knappene for at de skal komme under slideshowet -->
+        <button id="btnForrige" type="button" name="button">Forrige</button>
+        <button id="btnNeste" type="button" name="button">Neste</button>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    var imgGranbo = document.getElementById("imgGranbo");
+    var imgGranstua = document.getElementById("imgGranstua");
+    var outputEn = document.getElementById("outputEn");
+    var outputTo = document.getElementById("outputTo");
+    var output = document.getElementById("output")
+
+    imgGranbo.onclick = function () {
+        outputEn.innerHTML = "Navn: Granbo <br>Sengeplasser: 6<br>Standard: Middels"
+    };
+    imgGranstua.onclick = function () {
+        outputTo.innerHTML = "Navn: Granstua <br>Sengeplasser: 4<br>Standard: Høg"
+    };
+
+
+    var hytteBilder = ["bilder/granbo02.jpg", "bilder/granbo03.jpg", "bilder/granstua02.jpg", "bilder/granstua03.jpg", ];
+
+    // En global variabel som holder kontroll på hvilket bilde som vises i slideshowet
+    var bildeTeller = 0;
+
+    // Setter bilde i slideshowet til å være bilde med indeks 0 (bildeTeller) idet nettsiden åpnes.
+    output.src = hytteBilder[bildeTeller];
+
+    //En funksjon som bytter til forrige bilde
+    btnForrige.onclick = function(){
+        bildeTeller = bildeTeller - 1; // Trekk fra 1 på variabelen bildeTeller
+        if (bildeTeller<0){ // Hvis bildeTeller blir mindre enn 0 settes den til det siste bilde
+            bildeTeller = hytteBilder.length-1; // verdien av bildeTeller settes til indeksverdien
+        }
+        output.src = hytteBilder[bildeTeller]; // bytter src til filstien med indeks bildeTeller i arrayen albumcover
+    };
+
+    btnNeste.onclick = function(){
+        bildeTeller = bildeTeller + 1;
+        if (bildeTeller>hytteBilder.length-1){
+            bildeTeller = 0;
+        }
+        output.src = hytteBilder[bildeTeller];
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="number" id="grader" placeholder="Grader farhenheit">
+<button id="btnKonverter">Konverter</button>
+<p id="output"></p>
+<img src="bilder/termometer.png" alt="">
+
+
+<script>
+
+    var grader = document.getElementById("grader");
+    var btnKonverter = document.getElementById("btnKonverter");
+    var output = document.getElementById("output");
+
+    btnKonverter.onclick = function () {
+    celcius = (grader.value-32)*(5/9);
+    var tekst = grader.value + " grader fahrenheit er " + celcius + " grader celcius";
+    output.innerHTML = tekst;
+    }
+
+</script>
+</body>
+</html>

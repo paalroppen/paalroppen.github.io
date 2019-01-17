@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            font-family: Sans-Serif;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns:1fr 1fr;
+            text-align: center;
+            background-color: #00005e;
+            color: white;
+            height: 50px;
+            padding-top: 30px;
+        }
+
+        header > div > nav > a {
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+        }
+
+        header > div > a {
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+
+        }
+        header > div > nav > a {
+            padding-right: 10px;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<header>
+
+    <div>
+        <a href="">YR BANK</a>
+    </div>
+    <div id="grid1">
+        <nav>
+            <a href="">OVERFØRING</a>
+            <a href="">LÅN</a>
+            <a href="">OM YR BANK</a>
+
+        </nav>
+    </div>
+
+
+</header>
+
+<main>
+
+    <div>
+        <div>
+            <button id="btnBalanse">Klikk her for å se din balanse</button>
+            <p id="viserBalanse"></p>
+        </div>
+
+
+    </div>
+
+
+
+
+
+</main>
+
+<script>
+
+    var brukerNavn = document.getElementById("brukerNavn");
+    var btnLoggInn = document.getElementById("btnLoggInn");
+    var output1 = document.getElementById("output1");
+    var btnBalanse = document.getElementById("btnBalanse");
+    var viserBalanse = document.getElementById("viserBalanse");
+
+    btnLoggInn.onclick = function () {
+        if (brukerNavn.value == "Ropa3003") {
+            window.location = 'etterSide.html';
+            var balanse = 100000;
+        }
+        if (brukerNavn.value == "Yoli0603") {
+            window.location = 'etterSide.html';
+            var balanse = 52000;
+        }
+        if (brukerNavn.value == "Cota4569") {
+            window.location = 'etterSide.html';
+            var balanse = 4250;
+        }
+        if (brukerNavn.value == "Yolo6921") {
+            window.location = 'etterSide.html';
+            var balanse = 3500000;
+        }
+        if (brukerNavn.value == "Bafe2134") {
+            window.location = 'etterSide.html';
+            var balanse = 221;
+        }
+        else {
+            output1.innerHTML = "Feil brukernavn";
+        }
+
+    };
+
+    btnBalanse.onclick = function () {
+      viserBalanse.innerText = balanse;
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

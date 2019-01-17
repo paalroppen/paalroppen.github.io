@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btnKast">Kast</button>
+<p id="output"></p>
+<p id="ternEn"></p>
+<p id="ternTo"></p>
+<img id="bilde" src="" alt="">
+<img id="bildeTo" src="" alt="">
+
+
+
+<script>
+
+    btnKast = document.getElementById("btnKast");
+    output = document.getElementById("output");
+    ternEn = document.getElementById("ternEn");
+    ternTo = document.getElementById("ternTo");
+    bilde = document.getElementById("bilde");
+    bildeTo = document.getElementById("bildeTo");
+    const terning = ["oppgave4c/dice1.png", "oppgave4c/dice2.png", "oppgave4c/dice3.png", "oppgave4c/dice4.png", "oppgave4c/dice5.png", "oppgave4c/dice6.png"];
+
+
+    btnKast.onclick = function () {
+        var terningEn = Math.floor(Math.random()*6)+1;
+        var terningTo = Math.floor(Math.random()*6)+1;
+        var terningTotal = (terningEn + terningTo);
+        if (terningTotal === 2){
+            output.innerHTML = ("Beklager det ble bare 2")
+        }
+        else if (terningTotal === 12){
+            output.innerHTML = ("Gratulerer! Du fikk 12!")
+        }
+        else {
+            output.innerHTML = ("Du fikk " + terningTotal)
+        }
+        if (terningEn === 1){
+            bilde.src = terning[0]
+        }
+        if (terningEn === 2){
+            bilde.src = terning[1]
+        }
+        if (terningEn === 3){
+            bilde.src = terning[2]
+        }
+        if (terningEn === 4){
+            bilde.src = terning[3]
+        }
+        if (terningEn === 5){
+            bilde.src = terning[4]
+        }
+        if (terningEn === 6){
+            bilde.src = terning[5]
+        }
+        if (terningTo === 1){
+            bildeTo.src = terning[0]
+        }
+        if (terningTo === 2){
+            bildeTo.src = terning[1]
+        }
+        if (terningTo === 3){
+            bildeTo.src = terning[2]
+        }
+        if (terningTo === 4){
+            bildeTo.src = terning[3]
+        }
+        if (terningTo === 5){
+            bildeTo.src = terning[4]
+        }
+        if (terningTo === 6){
+            bildeTo.src = terning[5]
+        }
+
+    };
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

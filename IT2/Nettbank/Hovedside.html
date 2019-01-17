@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            font-family: Sans-Serif;
+        }
+        
+        header {
+            display: grid;
+            grid-template-columns:1fr 1fr;
+            text-align: center;
+            background-color: #00005e;
+            color: white;
+            height: 50px;
+            padding-top: 30px;
+        }
+
+        header > div > nav > a {
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+        }
+
+        header > div > a {
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+
+        }
+        header > div > nav > a {
+            padding-right: 10px;
+
+        }
+        #grid2 {
+            display: grid;
+            grid-template-columns:1fr;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        #grid3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding-top: 75px;
+            text-align: center;
+        }
+        #grid4{
+            text-align: center;
+            padding-top: 75px;
+        }
+
+        #litenTekst {
+            font-size: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+
+    <div>
+        <a href="Hovedside.html">YR BANK</a>
+    </div>
+    <div id="grid1">
+        <nav>
+            <a href="">OVERFØRING</a>
+            <a href="">LÅN</a>
+            <a href="">OM YR BANK</a>
+
+        </nav>
+    </div>
+    
+    
+</header>
+
+<main>
+
+    <div id="grid2">
+        <div>
+            <h2>Vennligst skriv inn ditt brukernavn</h2>
+            <p id="litenTekst">Dette steget er nødvendig før videre handlinger</p>
+            <br>
+        </div>
+        <div>
+            <input id="brukerNavn" type="text">
+            <button id="btnLoggInn">LOGG INN</button>
+            <h5 id="output1"></h5>
+        </div>
+    </div>
+
+        <div id="grid3">
+            <div>
+                <h2>Balanse</h2>
+                <button id="btnBalanse">Klikk for å se balansen din</button>
+                <p id="viserBalanse"></p>
+            </div>
+
+        </div>
+    <div id="grid4">
+        <div>
+            <h2>Overføring</h2>
+        </div>
+        <div>
+            <h5>Innskudd</h5>
+            <input id="inputInnskudd" type="text">
+            <button id="btnInnskudd">Godkjenn</button>
+
+        </div>
+        <div>
+            <h5>Uttak</h5>
+            <input id="inputUttak" type="text">
+            <button id="btnUttak">Godkjenn</button>
+
+        </div>
+        <div>
+            <p id="nyBalanse"></p>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    
+</main>
+
+<script>
+
+    var brukerNavn = document.getElementById("brukerNavn");
+    var btnLoggInn = document.getElementById("btnLoggInn");
+    var output1 = document.getElementById("output1");
+    var grid2 = document.getElementById("grid2");
+    var btnBalanse = document.getElementById("btnBalanse");
+    var viserBalanse = document.getElementById("viserBalanse");
+    var grid3 = document.getElementById("grid3");
+    var balanse = 0;
+    var btnInnskudd = document.getElementById("btnInnskudd");
+    var btnUttak = document.getElementById("btnUttak");
+    var inputInnskudd = document.getElementById("inputInnskudd");
+    var inputUttak = document.getElementById("inputUttak");
+    var nyBalanse = document.getElementById("nyBalanse");
+
+
+    btnLoggInn.onclick = function () {
+        if (brukerNavn.value == "Ropa3003") {
+            balanse = 100000;
+            grid2.style.display="none"
+
+        }
+        if (brukerNavn.value == "Yoli0603") {
+            grid2.style.display="none";
+            balanse = 52000;
+        }
+        if (brukerNavn.value == "Cota4569") {
+            grid2.style.display="none";
+            balanse = 4250;
+        }
+        if (brukerNavn.value == "Yolo6921") {
+            grid2.style.display="none";
+            balanse = 3500000;
+        }
+        if (brukerNavn.value == "Bafe2134") {
+            grid2.style.display="none";
+            balanse = 221;
+        }
+        else {
+            output1.innerHTML = "Feil brukernavn";
+        }
+
+    };
+
+    btnBalanse.onclick = function () {
+
+        viserBalanse.innerHTML = "Din balanse er " + balanse + " kroner";
+    };
+
+    btnInnskudd.onclick = function () {
+        balanse += Number(inputInnskudd.value);
+        nyBalanse.innerHTML = "Du har satt inn " + inputInnskudd.value + " kr og din nye balanse er nå " + balanse;
+
+    };
+
+    btnUttak.onclick = function () {
+        balanse -= Number(inputUttak.value);
+        nyBalanse.innerHTML = "Du har tatt ut " + inputUttak.value + " kr og din nye balanse er nå " + balanse;
+    };
+    
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

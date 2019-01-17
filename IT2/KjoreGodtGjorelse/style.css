@@ -1,0 +1,89 @@
+main {
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+}
+
+header {
+    min-height: 50px;
+    background-color: #A5F2F2;
+    padding: 0;
+
+}
+
+#Logo {
+    max-height: 50px;
+    padding: 2%;
+    display: block;
+    margin: auto;
+}
+
+*{
+    margin: 0;
+}
+
+main {
+    padding-top: 20px;
+    font-family: Futura;
+}
+
+#Grid1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#Div1{
+
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+#strl > input{
+    display: none;
+}
+
+label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    line-height: 50px;
+    cursor: pointer
+}
+
+#bil:checked ~ label[for="bil"],
+#motorsykkel:checked ~ label[for="motorsykkel"],
+#elbil:checked ~ label[for="elbil"] {
+    background: #A5F2F2;
+    color: white;
+}
+
+#Resultat{
+    font-style: italic;
+    margin-top: 2%;
+}
+
+#Video {
+    width: 73%;
+    height: 73%;
+}
+
+#andmeldOgTerning{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 50px;
+    min-height: 250px;
+}
+
+footer {
+    text-align: center;
+    font-family: Futura;
+}
+footer > p {
+    opacity: 0.5;
+    color: #A5F2F2;
+}

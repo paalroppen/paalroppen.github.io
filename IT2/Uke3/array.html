@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<ul id="filmListe">
+
+</ul>
+
+
+<script>
+
+    let filmListe = document.getElementById("filmListe");
+
+
+    let filmer = ["Ben hur", "Redemtion", "Kill Buljo"];
+
+    //document.write(filmer[2]);
+
+    for(let film of filmer){
+        console.log(film);
+        filmListe.innerHTML += "<li>" + film + "</li>"
+    }
+
+    for (let i = 0; i <3; i++){
+        console.log(filmer[i]);
+    }
+
+</script>
+
+</body>
+</html>

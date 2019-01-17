@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="number" id="alder" placeholder="Skriv inn din alder">
+<button id="btnResultat">Klikk her for å finne ut hvor mye din billett koster</button>
+<input type="radio" name="type" id="student" /> Student
+<input type="radio" name="type" id="pensjonist" /> Pensjonist
+
+
+
+<script>
+
+    //alert(Math.floor(Math.random()*11)+10);
+
+    var alder = document.getElementById("alder");
+    var btnResultat = document.getElementById("btnResultat");
+    var student = document.getElementById("student");
+    var pensjonist = document.getElementById("pensjonist");
+
+
+    btnResultat.onclick = function () {
+        if (18<alder.value && student.checked) {
+            alert("Du kjører for 56");
+        }
+        else if (18<alder.value && pensjonist.checked) {
+            alert("Du kjører for 28");
+        }
+        else if (5 >alder.value) {
+            alert("Du kjører gratis");
+        }
+        else if (5<alder.value && alder.value<18) {
+            alert("Du kjører for 30kr");
+        }
+        else if (18<alder.value) {
+            alert("Du kjører for 70kr");
+        }
+
+
+    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
