@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HJELP MED THORC</title>
+
+    <style>
+
+        #minHjelp {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 50%;
+        }
+
+        #hovedTag {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        body {
+            text-align: center;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id="hovedTag">
+
+<div>
+Mitt navn: <input type="text" id="navn">
+Hva jeg trenger hjelp med: <input type="text" id="hjelp">
+
+<button id="btn">Send inn</button>
+</div>
+<div>
+
+<div id="minHjelp">
+
+    <div class="mittNavn">
+        <ul id="liste"></ul>
+    </div>
+
+    <div class="hjelpMeg">
+        <ul id="hjelpListe"></ul>
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+    var btn = document.querySelector("#btn");
+    var liste = document.querySelector("#liste");
+    var navn = document.querySelector("#navn");
+    var hjelp = document.querySelector("#hjelp");
+    var hjelpListe = document.querySelector("#hjelpListe");
+
+    btn.onclick = function () {
+        liste.innerHTML += `<li>${navn.value}</li>`;
+        hjelpListe.innerHTML += `<li>${hjelp.value}</li>`;
+        navn.value = "";
+        hjelp.value = "";
+    };
+
+
+</script>
+
+</body>
+</html>
