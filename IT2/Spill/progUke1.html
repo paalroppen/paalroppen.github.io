@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #logo {
+            width: 20%;
+            position: absolute;
+            left: 50%;
+            top: 120px;
+            transform: translate(-50%, -50%);
+        }
+
+        #logotekst {
+            font-style: italic;
+            text-align: center;
+            padding-top: 200px;
+        }
+        canvas {
+            border: 3px solid gold;
+            position: absolute;
+            left: 50%;
+            top: 56%;
+            transform: translate(-50%, -50%);
+        }
+        #bilde {
+            width: 55%;
+            position: absolute;
+            left: 50%;
+            top: 56%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+<img id="logo" src="FP%20LOGO.png" alt="">
+<p id="logotekst"> Can he escape the wall?</p>
+
+<canvas id="spillCanvas" width="768" height="404.4"></canvas>
+<!--<img id="bilde" src="FlappyT.png" alt="">-->
+
+
+<script>
+
+    var c = document.getElementById("spillCanvas");
+    var ctx = c.getContext("2d");
+
+    var Trump = {
+        bredde:40,
+        hoyde:40,
+        farge:"blue",
+        xpos:150,
+        ypos:182.2,
+        xfart:0,
+        yfart:0,
+        xretning:0,
+        yretning:0
+    };
+
+
+    //gameLoop();
+
+
+    
+    function gameLoop() {
+        clearCanvase();
+        //spinnHode(); //Spinner hodet til trump når det faller nedover, likt som fuglen i flappybird får helling nedover når den faller
+        //tegnMur(); //Tegner muren som er objektene som man skal unngå / komme seg gjennom
+        //flyttMur(); //Flytter muren etterhvert som man kommer innover i banen
+        //sjekkKollisjon(); //Sjekker om figuren treffer muren og "dør"/taper
+        TegnTrump();
+        requestAnimationFrame(gameLoop)
+    }
+
+
+    function TegnTrump() {
+        //ctx.fillStyle = Trump.farge;
+
+        ctx.strokeStyle = "blue";
+        ctx.rect(Trump.xpos, Trump.ypos, Trump.bredde, Trump.hoyde);
+        ctx.stroke();
+        Trump.ypos += 0.5;
+
+    }
+
+    document.body.onkeydown = function(event) {
+        if(event.code === "Space"){
+            Trump.ypos -= 10;
+
+        }
+    };
+
+    function clearCanvase(){
+        ctx.fillStyle = "white";
+        ctx.fillRect(0,0,c.width,c.height);
+    }
+    
+</script>
+
+</body>
+</html>
