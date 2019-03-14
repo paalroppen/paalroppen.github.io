@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+    
+        #container {
+            width: 213.33333px;
+            height: 213px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div id="container">
+
+    <img id="mjau" src="Mjau.png" alt="">
+
+</div>
+
+<script>
+
+    const mjau = document.querySelector("#mjau");
+
+    let mjauCSS = [
+        {
+            left: "0px"
+        },
+        {
+            left: "-600%"
+        }
+    ];
+
+    let mjauEgenskaper = {
+        duration: 1500,
+        iterations: Infinity,
+        easing: "steps(6)"
+    };
+
+
+
+    mjau.animate(mjauCSS, mjauEgenskaper)
+
+
+
+</script>
+
+</body>
+</html>

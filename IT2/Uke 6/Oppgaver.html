@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+
+
+    </style>
+</head>
+<body>
+
+<p id="overskrift">OVERSKRIFT</p>
+
+
+<script>
+
+    const overskrift = document.querySelector("#overskrift");
+
+    let animasjon = [
+        {
+            opacity: 0
+        },
+        {
+            opacity: 1
+        }
+    ];
+
+    let tid = {
+        duration: 2000,
+        easing: "ease-in-out",
+        iterations: 5
+    };
+
+    overskrift.animate(animasjon, tid)
+
+</script>
+
+</body>
+</html>

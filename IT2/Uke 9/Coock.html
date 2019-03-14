@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        * {
+            margin: 0;
+        }
+
+        #Cookie {
+            width: 150px;
+        }
+
+        #divScore {
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="divScore">Poeng: 0</div>
+<br>
+<br>
+<img id="Cookie" src="Cookie.png" alt="">
+
+
+<script>
+
+var divScore = document.getElementById("divScore");
+const Cookie = document.getElementById("Cookie");
+
+var poeng = 0;
+
+
+Cookie.onclick = merPoeng;
+
+
+function inn() {
+    Cookie.style.transform = "scale(1)"
+
+}
+
+function merPoeng () {
+    var w = window.innerWidth - 150;
+    var h = window.innerHeight - 150;
+    var tilfH = Math.random()* h;
+    var tilfW = Math.random()* w;
+    Cookie.style.marginLeft = tilfW + "px";
+    Cookie.style.marginTop = tilfH + "px";
+    Cookie.style.transition = "0.1s";
+    Cookie.style.transform = "scale(1.2)";
+
+    poeng += 10;
+    divScore.innerHTML = "Poeng: " + poeng;
+    setTimeout(inn, 100);
+
+}
+
+
+</script>
+
+</body>
+</html>

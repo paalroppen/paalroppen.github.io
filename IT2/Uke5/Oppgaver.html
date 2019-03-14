@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popup-info</title>
+
+    <style>
+
+        .container{
+            position: relative;
+            width: 400px;
+            height: 280px;
+        }
+        .container>img{
+            position: absolute;
+            transform:scale(1);
+            transition: 0.5s 0.5s;
+        }
+        .container>article{
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            padding: 10%;
+            background-color: DarkGreen;
+            color: white;
+            text-align: center;
+            transform: scale(0);
+            transition: 0.5s 0s;
+        }
+        .container:hover>img{
+            transform: scale(0);
+            transition: 0.5s 0s;
+        }
+        .container:hover>article{
+            transform: scale(1);
+            transition: 0.5s 0.5s;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <img src="løn2.jpg">
+    <article class="infoTekst">
+        <h1>Løven</h1>
+        <hr>
+        <p>Løven er et sosialt kattedyr som tilhører slekten brølekatter (Panthera)</p>
+        <a href="#">Les mer</a>
+
+    </article>
+
+</div>
+
+</body>
+</html>

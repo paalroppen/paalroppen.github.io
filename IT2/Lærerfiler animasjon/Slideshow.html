@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        #slide{
+            width: 300%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        #inniSlide1 {
+            background-color: red;
+        }
+        #inniSlide2 {
+            background-color: blue;
+        }
+        #inniSlide3 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="slide">
+        <div id="inniSlide1"></div>
+        <div id="inniSlide2"></div>
+        <div id="inniSlide3"></div>
+    </div>
+</div>
+
+<script>
+
+    var slide = document.getElementById("slide");
+
+    var slideCSS = [
+        {
+            marginLeft: "0"
+        }, {
+            marginLeft: "-100%"
+        }, {
+            marginLeft: "-200%"
+        }, {
+            marginLeft: "-300%"
+        }
+    ];
+
+    function alarmen() {
+        alert("wwwwww")
+    }
+
+    var slideEgenskaper = {
+        duration: 1000,
+        easing: "steps(3)",
+        iterations: Infinity,
+        start: alarmen
+    };
+
+
+    slide.animate(slideCSS, slideEgenskaper)
+
+</script>
+
+</body>
+</html>

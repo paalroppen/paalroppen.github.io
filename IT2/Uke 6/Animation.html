@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        img{
+            width: 100px;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+
+<img id="KS" src="KS28.jpg" alt="">
+
+</body>
+</html>
+
+<script>
+    const KS = document.querySelector("#KS");
+
+
+    let aniCSS = [
+        {
+            left: "0px",
+            top: "0px"
+        },
+        {
+            left: "300px",
+            top: "500px"
+        }
+    ];
+
+    let aniEg = {
+        duration: 1000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 5,
+        fill: "forwards"
+    };
+
+
+    KS.animate(aniCSS, aniEg)
+
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        #overskrift {
+            transition: 3s ease-in-out;
+            margin-top: 0;
+        }
+
+        body {
+            transition: 2s ease-in-out;
+        }
+
+        #overskrift:hover{
+            font-size: 300%;
+        }
+
+    </style>
+</head>
+<body>
+
+<p id="overskrift">Overskrift</p>
+
+<input type="text" id="inpFarge">
+
+<script>
+    let inpFarge = document.querySelector("#inpFarge");
+    let overskrift = document.querySelector("#overskrift");
+
+    overskrift.onmouseover = function () {
+        overskrift.style.fontSize = "300%"
+    };
+
+    overskrift.onmouseleave = function () {
+        overskrift.style.fontSize = "100%"
+    };
+
+    //inpFarge.oninput = function () {
+    //    document.body.style.backgroundColor =inpFarge.value;
+    //}
+
+
+
+</script>
+
+</body>
+</html>

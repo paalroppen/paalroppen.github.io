@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+         #bill {
+             width: 400px;
+             position: absolute;
+         }
+
+    </style>
+</head>
+<body>
+
+
+
+
+<img id="bill" src="Skjermbilde%202019-02-10%20kl.%2017.32.22.png" alt="Bilde av Bill Clinton">
+
+<script>
+    const bill = document.querySelector("#bill");
+    let animasjonCSS = [
+        {transform:"rotate(0deg)",left:"0px"},
+        {transform: "rotate(360deg)",left:"95px"}
+    ];
+    let animasjonInnstillinger = {
+        duration: 3000,
+        direction:"alternate",
+    };
+
+    //bill.style.transform = "translateY(-150px)";
+
+    bill.animate(animasjonCSS,animasjonInnstillinger);
+</script>
+
+</body>
+</html>

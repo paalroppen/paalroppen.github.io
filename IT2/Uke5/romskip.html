@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        @keyframes bevegelse {
+            0% {
+                top: 200px;
+                left: -200px;
+            }
+            50% {
+                top: 200px;
+                left: 400px;
+            }
+            90% {
+                top: 400px;
+                left: 400px;
+            }
+            100% {
+                top: 400px;
+                left: 400px;
+            }
+        }
+        #bilde {
+            animation: bevegelse 2s infinite;
+            position: absolute;
+        }
+        #bak {
+            height: 500px;
+            width: 100%;
+            position: relative; background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="bak"></div>
+
+<img src="løn2.jpg" alt="" id="bilde" height="100px">
+
+</body>
+</html>

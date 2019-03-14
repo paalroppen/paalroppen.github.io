@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        div {
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        #firkant1{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            transition: 2s;
+
+        }
+
+        #firkant1:hover{
+            transform: rotate(90deg);
+            transform-origin: right bottom;
+        }
+
+
+        #firkant2{
+            height: 100px;
+            width: 100px;
+            background-color: orchid;
+            transition: 2s;
+        }
+
+        #firkant2:hover {
+            transform: rotate(60deg);
+            transform-origin: center center;
+        }
+        #firkant3{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            transition: 2s;
+        }
+        #firkant3:hover {
+            height: 200px;
+            width: 200px;
+
+        }
+        #firkant4{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            position: relative;
+            transition: 6s;
+        }
+
+        #firkant4:hover {
+            transform: translateX(650px) translateY(208px);
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<div id="firkant1"></div>
+<div id="firkant2"></div>
+<div id="firkant3"></div>
+<div id="firkant4"></div>
+
+
+<script>
+
+    var firkant1 = document.getElementById("firkant1");
+
+
+
+</script>
+
+</body>
+</html>

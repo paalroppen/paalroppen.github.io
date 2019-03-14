@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        *{
+           margin: 0;
+            text-align: center;
+
+        }
+
+        #p1 {
+            padding-top: 30px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+<p id="p1">Vennligst skriv inn antall norske kroner</p>
+<input id="antallNOK" type="number">
+<p>Velg hvilke valuta du vil gjøre om til</p>
+<input type="radio" id="inpSEK"
+       name="type">
+<label for="inpSEK">SEK</label>
+<br>
+<input type="radio" id="inpGBP"
+       name="type">
+<label for="inpSEK">GBP</label>
+<br>
+<input type="radio" id="inpUSD"
+       name="type">
+<label for="inpSEK">USD</label>
+<br>
+<button id="btnRegn">Regn ut</button>
+<div id="output"></div>
+
+
+
+<script>
+
+    var antallNOK = document.getElementById("antallNOK");
+    var output = document.getElementById("output");
+    var btnRegn = document.getElementById("btnRegn");
+    var inpSEK = document.getElementById("inpSEK");
+    var inpGBP = document.getElementById("inpGBP");
+    var inpUSD = document.getElementById("inpUSD");
+    var SEK = 0;
+    var GBP = 0;
+    var USD = 0;
+
+    btnRegn.onclick = function () {
+        if (inpSEK.checked) {
+            var SEK = antallNOK.value*1.07;
+            output.innerHTML = antallNOK.value + " NOK er " + SEK + " SEK"
+
+        }
+        else if (inpGBP.checked) {
+            var GBP = antallNOK.value*0.089;
+            output.innerHTML = antallNOK.value + " NOK er " + GBP + " GBP"
+        }
+        else if (inpUSD.checked) {
+            var USD = antallNOK.value*0.11;
+            output.innerHTML = antallNOK.value + " NOK er " + USD + " USD"
+        }
+        else {
+            output.innerHTML = "Du må velge en valuta"
+        }
+    };
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

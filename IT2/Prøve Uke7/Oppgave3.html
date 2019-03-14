@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-image: url("vedlegg/earth.png");
+            background-size: 100% auto;
+        }
+
+        #spaceX {
+            transform: translateX(650px) translateY(320px);
+            position: relative;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<button id="start">FLY!</button>
+
+<img id="spaceX" src="vedlegg/spaceX.png" alt="">
+
+
+<script>
+
+    var start = document.getElementById("start");
+    var spaceX = document.getElementById("spaceX");
+
+    let aniCSS = [
+        {
+            top: "0px"
+        },
+        {
+            top: "-800px"
+        }
+    ];
+
+    let aniEg = {
+        duration: 5000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 2
+
+    };
+
+    start.onclick = function () {
+        spaceX.animate(aniCSS, aniEg)
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<p>Hvor mange m/s er vinden?</p>
+<input id="ms" type="number">
+<button id="btnms">Send inn</button>
+<p id="output"></p>
+
+
+<script>
+    var ms = document.getElementById("ms");
+    var btnms = document.getElementById("btnms");
+    var output = document.getElementById("output");
+    var w = 0;
+
+    btnms.onclick = function () {
+    if ( ms.value < 2.6 ) {
+        output.innerHTML = "Det produseres ikke strøm ved " + ms.value + " m/s"
+    }
+
+    else if (2.5 < ms.value && ms.value < 10.1){
+        var w = ms.value*8;
+        output.innerHTML = "Det produseres " + w + " antall watt pr time i denne hastigheten"
+    }
+    else if (10 < ms.value && ms.value < 15.1){
+        var w = ms.value*14;
+        output.innerHTML = "Det produseres " + w + " antall watt pr time i denne hastigheten"
+    }
+    else {
+        output.innerHTML = "Du har enten glemt å legge inn m/s, eller så er vindhastigheten for rask for sikkerheten til vindmøllen!"
+    }
+    };
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>planke</title>
+    <style>
+        #planke {
+            width: 300px;
+            height: 60px;
+            background-color: sandybrown;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            transition: 0.1s;
+            transform: rotate(0deg);
+        }
+        #inpGrader {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<input type="number" id="inpGrader" min="0" max="360">
+
+<div id="planke"></div>
+
+<script>
+
+    var planke = document.getElementById("planke");
+    var inpGrader = document.getElementById("inpGrader");
+
+
+    inpGrader.oninput = function () {
+        planke.style.transform = "rotate(" + Number(inpGrader.value) + "deg)";
+    }
+
+</script>
+
+</body>
+</html>
