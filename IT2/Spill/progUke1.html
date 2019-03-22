@@ -9,93 +9,119 @@
             width: 20%;
             position: absolute;
             left: 50%;
-            top: 120px;
+            top: 100px;
             transform: translate(-50%, -50%);
         }
 
         #logotekst {
             font-style: italic;
             text-align: center;
-            padding-top: 200px;
+            padding-top: 180px;
         }
         canvas {
             border: 3px solid gold;
             position: absolute;
             left: 50%;
-            top: 56%;
+            top: 58%;
             transform: translate(-50%, -50%);
         }
-        #bilde {
-            width: 55%;
-            position: absolute;
-            left: 50%;
-            top: 56%;
-            transform: translate(-50%, -50%);
+
+        #divScore{
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
         }
+
     </style>
 </head>
 <body>
 
 <img id="logo" src="FP%20LOGO.png" alt="">
-<p id="logotekst"> Can he escape the wall?</p>
+<p id="logotekst"> Can he escape the wall?</p> <div id="divScore">MEXICANS DEPORTED: 0</div>
 
 <canvas id="spillCanvas" width="768" height="404.4"></canvas>
-<!--<img id="bilde" src="FlappyT.png" alt="">-->
-
 
 <script>
 
     var c = document.getElementById("spillCanvas");
     var ctx = c.getContext("2d");
+    var trumpX = 150;
+    var trumpY = 182.2;
+    var score = 0;
+    var gravity = 1;
 
-    var Trump = {
-        bredde:40,
-        hoyde:40,
-        farge:"blue",
-        xpos:150,
-        ypos:182.2,
-        xfart:0,
-        yfart:0,
-        xretning:0,
-        yretning:0
+    var bakGrunn = new Image();
+    bakGrunn.src = "AMRK.png";
+
+    var Trump = new Image();
+    Trump.src = "Trump.png";
+
+    var gjerdeOppe = new Image();
+    gjerdeOppe.src = "GjerdeOppe.png";
+
+    var gjerdeNede = new Image();
+    gjerdeNede.src = "GjerdeNede.png";
+
+    var pipe = [];
+    pipe[0] = {
+      x : c.width,
+      y : 0,
     };
 
+    var konstant = gjerdeOppe.height+150;
 
-    //gameLoop();
+    gameLoop();
 
-
-    
     function gameLoop() {
-        clearCanvase();
-        //spinnHode(); //Spinner hodet til trump når det faller nedover, likt som fuglen i flappybird får helling nedover når den faller
-        //tegnMur(); //Tegner muren som er objektene som man skal unngå / komme seg gjennom
-        //flyttMur(); //Flytter muren etterhvert som man kommer innover i banen
-        //sjekkKollisjon(); //Sjekker om figuren treffer muren og "dør"/taper
         TegnTrump();
+        tegnMur();
+        Score();
         requestAnimationFrame(gameLoop)
     }
 
 
     function TegnTrump() {
-        //ctx.fillStyle = Trump.farge;
+        ctx.drawImage(bakGrunn, 0, 0, c.width, c.height);
+        ctx.drawImage(Trump, trumpX, trumpY, 65, 65);
+        trumpY += gravity;
 
-        ctx.strokeStyle = "blue";
-        ctx.rect(Trump.xpos, Trump.ypos, Trump.bredde, Trump.hoyde);
-        ctx.stroke();
-        Trump.ypos += 0.5;
 
+    }
+
+    function Score(){
+        score += 1;
+        divScore.innerHTML = "MEXICANS DEPORTED: " + Math.floor(score/60);
+
+    }
+
+    function tegnMur() {
+
+        for (var i = 0; i < pipe.length ; i++){
+            ctx.drawImage(gjerdeOppe, pipe[i].x, pipe[i].y);
+            ctx.drawImage(gjerdeNede, pipe[i].x, pipe[i].y+konstant);
+            pipe[i].x--;
+
+            if (pipe[i].x === c.width -250){
+                pipe.push({
+                    x: c.width,
+                    y: Math.floor(Math.random() * gjerdeOppe.height) - gjerdeOppe.height
+                });
+            }
+
+
+        if (trumpX + 65 >= pipe[i].x && trumpX <= pipe[i].x + gjerdeOppe.width &&
+            (trumpY <= pipe[i].y + gjerdeOppe.height || trumpY + 65 >= pipe[i].y+konstant) || trumpY + 65 >= c.height || trumpY <= 0){
+            location.reload()
+            }
+        }
     }
 
     document.body.onkeydown = function(event) {
         if(event.code === "Space"){
-            Trump.ypos -= 10;
+            trumpY -= 25;
+
 
         }
-    };
-
-    function clearCanvase(){
-        ctx.fillStyle = "white";
-        ctx.fillRect(0,0,c.width,c.height);
     }
     
 </script>
