@@ -32,12 +32,18 @@
             text-align: center;
         }
 
+        #divRekord{
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
 
 <img id="logo" src="FP%20LOGO.png" alt="">
-<p id="logotekst"> Can he escape the wall?</p> <div id="divScore">MEXICANS DEPORTED : 0</div>
+<p id="logotekst"> Can he escape the wall?</p> <div id="divScore">MEXICANS DEPORTED : 0</div><div id="divRekord">RECORD : 0</div>
 
 <canvas id="spillCanvas" width="768" height="404.4"></canvas>
 
@@ -45,11 +51,16 @@
 <script>
 
     var c = document.getElementById("spillCanvas");
+    var divRekord = document.getElementById("divRekord");
     var ctx = c.getContext("2d");
     var trumpX = 150; //hvor langt inn på canvas trump skal være.
     var trumpY = 182.2; //starthøyde for trump-fjeset.
+    var trumpBredde = 65; //bredden til trump-fjeset
+    var trumpHoyde = 65; // høyden til trump-fjeset
     var score = 0; //variabel for score som endres underveis.
     var gravity = 1.7; //bestemmer hvordan trump-fjeset faller.
+    c.width = 768;
+    c.height = 404.4;
 
     //BILDELASTING FOR CANVAS
 
@@ -73,6 +84,8 @@
 
     var konstant = gjerdeOppe.height+175;
 
+
+
     gameLoop(); //kaller gameloopen med alle funksjonene spillet baserer seg på.
 
     //GAMELOOP som inneholder alle funksjonene.
@@ -86,16 +99,24 @@
     //funksjonen som tegner trump-fjeset på canvaset.
     function TegnTrump() {
         ctx.drawImage(bakGrunn, 0, 0, c.width, c.height);
-        ctx.drawImage(Trump, trumpX, trumpY, 65, 65);
+        ctx.drawImage(Trump, trumpX, trumpY, trumpBredde, trumpHoyde);
         trumpY += gravity;
 
 
     }
     //funksjonen som legger til poeng i scoren.
     function Score(){
-        score += 1;
-        divScore.innerHTML = "MEXICANS DEPORTED : " + Math.floor(score/60); // for hvert sekund øker score med 1. (/60 siden det er 60FPS)
-
+        score += 1/60;
+        divScore.innerHTML = "MEXICANS DEPORTED : " + Math.floor(score); // for hvert sekund øker score med 1. (/60 siden det er 60FPS)
+        //highscore funksjon. lagrer lokalt høyeste poengsum.
+        if (localStorage.Rekord===undefined){
+            localStorage.Rekord=0;
+        }
+        divRekord.innerHTML = "RECORD : " + localStorage.Rekord;
+        if (score>localStorage.Rekord){
+            localStorage.Rekord=Math.floor(score);
+            divRekord.innerHTML = "RECORD : " + Math.floor(score);
+        }
     }
     //funksjonen som tegner muren, flytter den og sjepper om trump-fjeset krasjer med den / kantene på canvaset.
     function tegnMur() {
@@ -105,6 +126,7 @@
             ctx.drawImage(gjerdeNede, gjerde[i].x, gjerde[i].y+konstant);
             gjerde[i].x-=2;
 
+
             if (gjerde[i].x === c.width -250){
                 gjerde.push({
                     x: c.width,
@@ -112,15 +134,16 @@
                 });
             }
 
-
-        if (trumpX + 65 >= gjerde[i].x && trumpX <= gjerde[i].x + gjerdeOppe.width &&
-            (trumpY <= gjerde[i].y + gjerdeOppe.height || trumpY + 65 >= gjerde[i].y+konstant) || trumpY + 65 >= c.height || trumpY <= 0){
+    //sjekker først om trump kræsjer med siden(e) av gjerdene. så sjekker den om trump kræsjer med innsiden/toppen/bunnen av
+    // til slutt sjekker den om trump kræsjer med langsidene av canvaset.
+        if (trumpX + trumpBredde >= gjerde[i].x && trumpX <= gjerde[i].x + gjerdeOppe.width &&
+            (trumpY <= gjerde[i].y + gjerdeOppe.height || trumpY + trumpHoyde >= gjerde[i].y+konstant) || trumpY + trumpHoyde >= c.height || trumpY <= 0){
             location.reload()
             }
         }
     }
 
-
+    //dersom space trykkes blir y posisjonen til endret med -35. det gjør at den går oppover i canvaset.
     document.body.onkeydown = function(event) {
         if(event.code === "Space"){
             trumpY -= 35;
